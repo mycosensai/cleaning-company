@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sparkling Cleaning Services — Quality You Can See, Service You Can Trust</title>
+<meta name="description" content="Sparkling Cleaning Services — reliable, thorough residential cleaning. Standard cleans, deep cleans, and move-out cleans. Get a free quote today.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,600;6..96,700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-dark:    #081828;
+    --bg-black:   #010101;
+    --bg-cream:   #f9e7b7;
+    --bg-light:   #f5f0e8;
+    --gold:       #b2884e;
+    --gold-lt:    #f9e7b7;
+    --gold-deep:  #4b3116;
+    --teal:       #446e81;
+    --teal-lt:    #b1d0c4;
+    --text-dark:  #1a1a1a;
+    --text-light: #f2efe8;
+    --text-soft:  #8a9a9a;
+    --border:     #d4c9b0;
+    --radius:     4px;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    font-family:'Manrope',system-ui,sans-serif;
+    background:var(--bg-light);
+    color:var(--text-dark);
+    line-height:1.7;
+    font-weight:300;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display { font-family:'Bodoni Moda',Georgia,serif; font-weight:400; }
+  a { color:var(--teal); text-decoration:none; }
+  a:hover { color:var(--gold); text-decoration:none; }
+  .wrap { max-width:1140px; margin:0 auto; padding:0 28px; }
+
+  /* ── Header ── */
+  header {
+    position:sticky; top:0; z-index:50;
+    background:var(--bg-dark);
+    border-bottom:1px solid var(--gold-deep);
+  }
+  .nav { display:flex; align-items:center; justify-content:space-between; padding:18px 0; }
+  .brand { display:flex; align-items:center; gap:14px; }
+  .brand-mark {
+    width:42px; height:42px; border-radius:50%;
+    border:1px solid var(--gold); color:var(--gold-lt);
+    display:grid; place-items:center; font-family:'Bodoni Moda',serif;
+    font-size:1.05rem;
+  }
+  .brand-text { display:flex; flex-direction:column; }
+  .brand-name { font-family:'Bodoni Moda',serif; font-size:1.15rem; letter-spacing:.04em; color:var(--text-light); line-height:1.25; }
+  .brand-sub { font-size:.6rem; letter-spacing:.32em; text-transform:uppercase; color:var(--gold); }
+  .nav-links { display:flex; gap:32px; font-size:.76rem; letter-spacing:.16em; text-transform:uppercase; }
+  .nav-links a { color:var(--text-soft); }
+  .nav-links a:hover { color:var(--gold-lt); }
+  .btn {
+    display:inline-block; padding:13px 30px; border-radius:var(--radius);
+    font-family:'Manrope',sans-serif; font-weight:500; font-size:.76rem;
+    letter-spacing:.16em; text-transform:uppercase;
+    border:1px solid transparent; cursor:pointer; transition:.2s;
+  }
+  .btn-primary { background:var(--gold); color:var(--bg-dark); }
+  .btn-primary:hover { background:var(--gold-lt); color:var(--bg-dark); }
+  .btn-ghost { border-color:var(--gold); color:var(--gold-lt); background:transparent; }
+  .btn-ghost:hover { background:var(--gold); color:var(--bg-dark); border-color:var(--gold); }
+  @media(max-width:900px){ .nav-links { display:none; } }
+
+  /* ── Hero ── */
+  .hero {
+    background:var(--bg-dark);
+    color:var(--text-light);
+    padding:80px 0 70px;
+    text-align:center;
+    border-bottom:1px solid var(--gold-deep);
+    position:relative;
+    overflow:hidden;
+  }
+  .hero > .wrap { position:relative; z-index:1; }
+  .eyebrow {
+    display:inline-block; font-size:.66rem; letter-spacing:.4em; text-transform:uppercase;
+    color:var(--gold); margin-bottom:24px;
+  }
+  .hero h1 {
+    font-size:clamp(2.2rem,5.5vw,3.8rem);
+    line-height:1.15; letter-spacing:-.01em;
+    max-width:18ch; margin:0 auto 20px; color:var(--text-light);
+  }
+  .hero h1 em { font-style:italic; color:var(--gold-lt); }
+  .hero p.lede {
+    font-size:clamp(1rem,2vw,1.12rem); color:var(--text-soft);
+    max-width:52ch; margin:0 auto 36px; font-weight:300;
+  }
+  .hero-cta { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+  .trust-row {
+    display:flex; gap:48px; justify-content:center; flex-wrap:wrap;
+    margin-top:56px; padding-top:36px; border-top:1px solid rgba(178,136,78,.2);
+  }
+  .trust-row div { font-size:.7rem; letter-spacing:.18em; text-transform:uppercase; color:var(--text-soft); }
+  .trust-row strong { display:block; font-family:'Bodoni Moda',serif; font-size:1.8rem; font-weight:400; letter-spacing:0; text-transform:none; color:var(--gold-lt); margin-bottom:4px; }
+
+  /* ── Pricing ── */
+  .pricing-section {
+    background:var(--bg-light);
+    padding:80px 0 70px;
+  }
+  .section-head { text-align:center; margin-bottom:52px; }
+  .section-head .kicker { font-size:.64rem; letter-spacing:.38em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:14px; }
+  .section-head h2 { font-size:clamp(1.7rem,3.6vw,2.5rem); letter-spacing:-.01em; margin-bottom:14px; color:var(--text-dark); }
+  .section-head p { color:var(--text-soft); font-size:1rem; max-width:56ch; margin:0 auto; font-weight:300; }
+
+  .pricing-grid {
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px; margin-bottom:40px;
+  }
+  .price-card {
+    background:#fff; border:1px solid var(--border); border-radius:var(--radius);
+    padding:36px 24px; text-align:center; transition:.2s;
+    box-shadow:0 2px 8px rgba(0,0,0,.04);
+  }
+  .price-card:hover { border-color:var(--gold); box-shadow:0 8px 24px rgba(0,0,0,.08); transform:translateY(-2px); }
+  .price-card h3 { font-size:.72rem; letter-spacing:.22em; text-transform:uppercase; color:var(--text-soft); margin-bottom:16px; font-family:'Manrope',sans-serif; font-weight:500; }
+  .price-card .price { font-family:'Bodoni Moda',serif; font-size:2.2rem; color:var(--gold); letter-spacing:-.01em; }
+  .price-card .price small { font-size:1rem; color:var(--gold-deep); }
+
+  .addons { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px; margin-top:36px; }
+  .addon {
+    background:#fff; border:1px solid var(--border); border-radius:var(--radius);
+    padding:28px 26px; background:#faf6ee;
+  }
+  .addon h3 { font-size:1.15rem; color:var(--text-dark); margin-bottom:10px; }
+  .addon p { color:var(--text-soft); font-size:.92rem; font-weight:300; }
+
+  .price-note {
+    margin-top:32px; text-align:center; color:var(--text-soft); font-size:.88rem;
+    max-width:62ch; margin-left:auto; margin-right:auto; font-style:italic;
+  }
+
+  /* ── Services ── */
+  .services-section {
+    background:var(--bg-dark);
+    color:var(--text-light);
+    padding:80px 0;
+  }
+  .services-section .section-head h2 { color:var(--text-light); }
+  .services-section .section-head p { color:var(--text-soft); }
+  .services-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1px; background:rgba(178,136,78,.15); border:1px solid rgba(178,136,78,.15); }
+  .service-card { background:var(--bg-dark); padding:36px 28px; transition:.2s; }
+  .service-card:hover { background:#0c2233; }
+  .service-card .icon {
+    width:36px; height:36px; border-radius:50%; border:1px solid var(--gold);
+    display:grid; place-items:center; margin-bottom:20px; font-size:.9rem; color:var(--gold-lt);
+  }
+  .service-card h3 { font-size:1.15rem; color:var(--text-light); margin-bottom:10px; }
+  .service-card p { color:var(--text-soft); font-size:.9rem; font-weight:300; }
+
+  /* ── Process ── */
+  .process-section { background:var(--bg-light); padding:80px 0; }
+  .steps { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:40px; }
+  .step { text-align:center; }
+  .step .num {
+    font-family:'Bodoni Moda',serif; font-size:2rem; color:var(--gold);
+    margin-bottom:12px; display:block; line-height:1;
+  }
+  .step h3 { font-size:1.05rem; color:var(--text-dark); margin-bottom:8px; }
+  .step p { color:var(--text-soft); font-size:.88rem; font-weight:300; }
+
+  /* ── Quote ── */
+  .quote-section {
+    background:var(--bg-dark); color:var(--text-light);
+    padding:80px 0;
+  }
+  .quote-section .quote-inner {
+    background:var(--bg-black); border:1px solid rgba(178,136,78,.2);
+    padding:56px 48px; display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start;
+  }
+  .quote-inner h2 { font-size:clamp(1.6rem,3.2vw,2.2rem); margin-bottom:14px; }
+  .quote-inner > div > p { color:var(--text-soft); margin-bottom:26px; font-weight:300; }
+  .quote-list { list-style:none; display:grid; gap:12px; }
+  .quote-list li { font-weight:300; font-size:.94rem; display:flex; gap:12px; align-items:flex-start; color:var(--text-soft); }
+  .quote-list li::before { content:"—"; color:var(--gold); flex-shrink:0; }
+  form { display:grid; gap:18px; }
+  label { font-size:.66rem; font-weight:500; letter-spacing:.18em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:7px; }
+  input, select, textarea {
+    width:100%; padding:13px 15px; border:1px solid rgba(178,136,78,.25); border-radius:var(--radius);
+    font-family:inherit; font-size:.94rem; background:var(--bg-dark); color:var(--text-light); font-weight:300;
+  }
+  input::placeholder, textarea::placeholder { color:#4a5a6a; }
+  input:focus, select:focus, textarea:focus { outline:none; border-color:var(--gold); }
+  textarea { resize:vertical; min-height:88px; }
+  select option { background:var(--bg-dark); color:var(--text-light); }
+  @media(max-width:900px){ .quote-section .quote-inner { grid-template-columns:1fr; gap:36px; padding:40px 24px; } }
+
+  /* ── Tagline ── */
+  .tagline-section {
+    background:var(--bg-light);
+    padding:60px 0;
+    text-align:center;
+    border-top:1px solid var(--border);
+  }
+  .tagline-section h2 {
+    font-size:clamp(1.4rem,3vw,2rem);
+    color:var(--text-dark);
+    font-style:italic;
+    letter-spacing:-.01em;
+  }
+  .tagline-section h2 em { color:var(--gold); font-style:italic; }
+
+  /* ── Booking widget ── */
+  .book-fab {
+    position:fixed; right:24px; bottom:24px; z-index:90;
+    display:inline-flex; align-items:center; gap:10px;
+    padding:14px 24px; border:1px solid var(--gold); border-radius:100px;
+    background:var(--bg-dark); color:var(--gold-lt); cursor:pointer;
+    font-family:'Manrope',sans-serif; font-weight:500; font-size:.72rem;
+    letter-spacing:.14em; text-transform:uppercase;
+    box-shadow:0 8px 28px rgba(0,0,0,.35); transition:.2s;
+  }
+  .book-fab:hover { background:var(--gold); color:var(--bg-dark); }
+  .book-fab svg { width:16px; height:16px; }
+
+  .book-overlay {
+    position:fixed; inset:0; z-index:100;
+    background:rgba(1,1,1,.82);
+    display:none; align-items:center; justify-content:center; padding:20px;
+  }
+  .book-overlay.open { display:flex; }
+  .book-panel {
+    background:var(--bg-dark); border:1px solid rgba(178,136,78,.25); border-radius:6px;
+    width:100%; max-width:520px; max-height:92vh; overflow-y:auto;
+    box-shadow:0 30px 80px rgba(0,0,0,.6);
+  }
+  .book-head {
+    padding:26px 30px 20px; border-bottom:1px solid rgba(178,136,78,.15);
+    display:flex; align-items:flex-start; justify-content:space-between; gap:16px;
+  }
+  .book-head h3 { font-size:1.35rem; color:var(--text-light); }
+  .book-head p { color:var(--text-soft); font-size:.85rem; margin-top:5px; font-weight:300; }
+  .book-close {
+    background:none; border:1px solid rgba(178,136,78,.25); border-radius:50%; cursor:pointer;
+    font-size:1.15rem; line-height:1; color:var(--text-soft); width:30px; height:30px; flex-shrink:0;
+  }
+  .book-close:hover { border-color:var(--gold); color:var(--gold-lt); }
+  .book-body { padding:24px 30px 30px; }
+
+  .book-dates { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:24px; }
+  .date-chip {
+    flex:1; min-width:70px; padding:12px 6px; text-align:center; cursor:pointer;
+    border:1px solid rgba(178,136,78,.2); border-radius:var(--radius); background:var(--bg-black); transition:.18s;
+    font-family:inherit; color:var(--text-light);
+  }
+  .date-chip:hover { border-color:var(--gold); }
+  .date-chip.active { border-color:var(--gold); background:#0c2233; }
+  .date-chip .dow { display:block; font-size:.6rem; font-weight:500; text-transform:uppercase; letter-spacing:.14em; color:var(--text-soft); }
+  .date-chip .day { display:block; font-family:'Bodoni Moda',serif; font-size:1.25rem; color:var(--gold-lt); margin-top:3px; }
+
+  .book-times { display:grid; grid-template-columns:repeat(auto-fill,minmax(90px,1fr)); gap:8px; margin-bottom:24px; }
+  .time-chip {
+    padding:10px 5px; text-align:center; cursor:pointer;
+    border:1px solid rgba(178,136,78,.2); border-radius:var(--radius); background:var(--bg-black); transition:.18s;
+    font-family:inherit; font-weight:400; font-size:.82rem; color:var(--text-light);
+  }
+  .time-chip:hover { border-color:var(--gold); }
+  .time-chip.active { border-color:var(--gold); background:var(--gold); color:var(--bg-dark); }
+
+  .book-label { font-size:.66rem; font-weight:500; letter-spacing:.18em; text-transform:uppercase; color:var(--gold); margin-bottom:10px; }
+  .book-summary {
+    padding:16px; border:1px solid rgba(178,136,78,.2); border-radius:var(--radius);
+    background:var(--bg-black); font-size:.9rem; color:var(--text-soft); font-weight:300;
+  }
+  .book-summary strong { color:var(--gold-lt); font-weight:500; }
+
+  /* ── Footer ── */
+  footer {
+    background:var(--bg-black);
+    border-top:1px solid rgba(178,136,78,.15);
+    padding:48px 0; text-align:center;
+  }
+  footer .brand { justify-content:center; margin-bottom:16px; }
+  footer p { color:var(--text-soft); font-size:.84rem; font-weight:300; }
+  footer .foot-links { display:flex; gap:28px; justify-content:center; margin-top:20px; font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; }
+  footer .copyright { margin-top:24px; font-size:.76rem; }
+  .btn-block { width:100%; }
+  .quote-kicker { font-size:.64rem; letter-spacing:.38em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:14px; }
+  .book-form { margin-top:22px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="brand">
+      <span class="brand-mark">SC</span>
+      <span class="brand-text">
+        <span class="brand-name">Sparkling</span>
+        <span class="brand-sub">Cleaning Services</span>
+      </span>
+    </a>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#process">How It Works</a>
+      <a href="#quote">Get a Quote</a>
+    </nav>
+    <a href="#quote" class="btn btn-primary">Book Now</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Residential Cleaning</span>
+      <h1>Quality You Can <em>See</em>, Service You Can <em>Trust</em></h1>
+      <p class="lede">
+        Sparkling Cleaning Services delivers reliable, thorough house cleaning
+        across your neighborhood. Standard cleans, deep cleans, and move-outs —
+        done right, at fair starting prices.
+      </p>
+      <div class="hero-cta">
+        <a href="#quote" class="btn btn-primary">Get a Free Quote</a>
+        <a href="#pricing" class="btn btn-ghost">See Pricing</a>
+      </div>
+      <div class="trust-row">
+        <div><strong>4+</strong>Home Sizes Served</div>
+        <div><strong>$80</strong>Starting Price</div>
+        <div><strong>100%</strong>Satisfaction Focused</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="pricing-section">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Transparent Rates</span>
+        <h2>Starting Prices</h2>
+        <p>Base rates by home size. Final pricing depends on the condition and scope of your clean.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="price-card">
+          <h3>1-Bedroom</h3>
+          <div class="price">$80 <small>–</small> $100</div>
+        </div>
+        <div class="price-card">
+          <h3>2-Bedroom</h3>
+          <div class="price">$100 <small>–</small> $150</div>
+        </div>
+        <div class="price-card">
+          <h3>3-Bedroom</h3>
+          <div class="price">$150 <small>–</small> $175</div>
+        </div>
+        <div class="price-card">
+          <h3>4-Bedroom</h3>
+          <div class="price">$175 <small>–</small> $220</div>
+        </div>
+      </div>
+
+      <div class="addons">
+        <div class="addon">
+          <h3>Deep Clean Add-On</h3>
+          <p>+$50 to +$100 depending on condition. Recommended for first-time cleans or homes that haven't been professionally cleaned recently.</p>
+        </div>
+        <div class="addon">
+          <h3>Move-Out Cleans</h3>
+          <p>Higher rates apply due to the extra time and detail required. Ideal for end-of-lease or pre-move-in turnovers.</p>
+        </div>
+      </div>
+
+      <p class="price-note">
+        Prices may increase based on home size, condition, number of bathrooms, pets, and requested add-ons.
+      </p>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="services-section">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">What We Do</span>
+        <h2>What We Clean</h2>
+        <p>From a quick refresh to a full top-to-bottom reset, we tailor the clean to your home and your budget.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="icon">&#9679;</div>
+          <h3>Standard Cleaning</h3>
+          <p>Kitchens, bathrooms, floors, dusting, and surface wipe-downs — the regular upkeep your home needs to stay fresh.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon">&#10022;</div>
+          <h3>Deep Cleaning</h3>
+          <p>Detailed top-to-bottom clean: baseboards, inside appliances, grout, vents, and every overlooked corner.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon">&#9633;</div>
+          <h3>Move-Out Cleaning</h3>
+          <p>Leaving or moving in? We get the home empty, spotless, and ready for the next chapter — or deposit back.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon">&#8635;</div>
+          <h3>Recurring Service</h3>
+          <p>Weekly, bi-weekly, or monthly visits scheduled around you. Consistent quality, one less thing to think about.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process" class="process-section">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Simple Process</span>
+        <h2>How It Works</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <span class="num">I</span>
+          <h3>Request a Quote</h3>
+          <p>Tell us your home size and what you need. We'll get back to you fast.</p>
+        </div>
+        <div class="step">
+          <span class="num">II</span>
+          <h3>Pick Your Time</h3>
+          <p>Choose a day that works for you — we schedule around your routine.</p>
+        </div>
+        <div class="step">
+          <span class="num">III</span>
+          <h3>We Clean</h3>
+          <p>Our team shows up on time and cleans every inch, top to bottom.</p>
+        </div>
+        <div class="step">
+          <span class="num">IV</span>
+          <h3>You Relax</h3>
+          <p>Come home to a spotless space. Book your next visit and keep it that way.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <section id="quote" class="quote-section">
+    <div class="wrap">
+      <div class="quote-inner">
+        <div>
+          <span class="quote-kicker">No Obligation</span>
+          <h2>Get Your Free Quote</h2>
+          <p>
+            Fill out the form and we'll get back to you with an exact price
+            based on your home, its size, and the level of clean you need.
+          </p>
+          <ul class="quote-list">
+            <li>Free, no-obligation quotes</li>
+            <li>Flexible scheduling</li>
+            <li>Standard, deep &amp; move-out cleans</li>
+            <li>Serving homes of every size</li>
+          </ul>
+        </div>
+        <form id="quoteForm" novalidate>
+          <div>
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Jane Doe" required>
+          </div>
+          <div>
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required>
+          </div>
+          <div>
+            <label for="bedrooms">Home Size</label>
+            <select id="bedrooms" name="bedrooms" required>
+              <option value="" disabled selected>Select bedrooms</option>
+              <option value="1">1-Bedroom</option>
+              <option value="2">2-Bedroom</option>
+              <option value="3">3-Bedroom</option>
+              <option value="4">4-Bedroom</option>
+              <option value="5+">5+ Bedrooms</option>
+            </select>
+          </div>
+          <div>
+            <label for="service">Service Type</label>
+            <select id="service" name="service" required>
+              <option value="" disabled selected>Select a service</option>
+              <option>Standard Cleaning</option>
+              <option>Deep Cleaning (Add-On)</option>
+              <option>Move-Out Cleaning</option>
+              <option>Recurring Service</option>
+            </select>
+          </div>
+          <div>
+            <label for="notes">Anything we should know?</label>
+            <textarea id="notes" name="notes" placeholder="Pets, condition, special requests..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Request My Quote</button>
+          <p id="formMsg" style="display:none; color:var(--gold-lt); font-weight:500; font-size:.88rem; text-align:center;"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAGLINE -->
+  <section class="tagline-section">
+    <div class="wrap">
+      <h2>Quality You Can <em>See</em>,<br>Service You Can <em>Trust</em></h2>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="#top" class="brand">
+      <span class="brand-mark">SC</span>
+      <span class="brand-text">
+        <span class="brand-name">Sparkling</span>
+        <span class="brand-sub">Cleaning Services</span>
+      </span>
+    </a>
+    <p>Professional residential cleaning — standard, deep &amp; move-out.</p>
+    <div class="foot-links">
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#quote">Get a Quote</a>
+    </div>
+    <p class="copyright">© <span id="year"></span> Sparkling Cleaning Services. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- BOOKING WIDGET -->
+<button class="book-fab" id="bookFab" aria-label="Book an appointment">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+  </svg>
+  Book an appointment
+</button>
+
+<div class="book-overlay" id="bookOverlay" role="dialog" aria-modal="true" aria-labelledby="bookTitle">
+  <div class="book-panel">
+    <div class="book-head">
+      <div>
+        <h3 id="bookTitle">Book an appointment</h3>
+        <p>Pick a day and time — we'll confirm shortly.</p>
+      </div>
+      <button class="book-close" id="bookClose" aria-label="Close">&times;</button>
+    </div>
+    <div class="book-body">
+      <p class="book-label">Choose a date</p>
+      <div class="book-dates" id="bookDates"></div>
+
+      <p class="book-label">Choose a time</p>
+      <div class="book-times" id="bookTimes"></div>
+
+      <div class="book-summary" id="bookSummary">Select a date and time to see your appointment.</div>
+
+      <form id="bookForm" class="book-form">
+        <div>
+          <label for="bookName">Full Name</label>
+          <input type="text" id="bookName" name="bookName" placeholder="Jane Doe" required>
+        </div>
+        <div>
+          <label for="bookPhone">Phone</label>
+          <input type="tel" id="bookPhone" name="bookPhone" placeholder="(555) 123-4567" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Confirm Appointment</button>
+        <p id="bookMsg" style="display:none; color:var(--gold-lt); font-weight:500; font-size:.88rem; text-align:center;"></p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  document.getElementById('quoteForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const form = e.target;
+    const msg = document.getElementById('formMsg');
+    const required = ['name','phone','bedrooms','service'];
+    const missing = required.filter(id => !form[id].value.trim());
+    if (missing.length) {
+      msg.style.display = 'block';
+      msg.style.color = '#e0a08a';
+      msg.textContent = 'Please fill in all required fields.';
+      return;
+    }
+    const body = encodeURIComponent(
+      `Name: ${form.name.value}\nPhone: ${form.phone.value}\n` +
+      `Bedrooms: ${form.bedrooms.value}\nService: ${form.service.value}\n` +
+      `Notes: ${form.notes.value || '—'}`
+    );
+    msg.style.display = 'block';
+    msg.style.color = 'var(--gold-lt)';
+    msg.innerHTML = 'Thanks! We\'ll be in touch shortly. ' +
+      '<a href="mailto:?subject=Cleaning Quote Request&body=' + body + '">Send details by email</a>';
+    form.reset();
+  });
+
+  /* ── Booking widget ── */
+  const overlay = document.getElementById('bookOverlay');
+  const fab = document.getElementById('bookFab');
+  const closeBtn = document.getElementById('bookClose');
+  const datesEl = document.getElementById('bookDates');
+  const timesEl = document.getElementById('bookTimes');
+  const summaryEl = document.getElementById('bookSummary');
+
+  let selectedDate = null;
+  let selectedTime = null;
+
+  const TIMES = ['8:00 AM','9:00 AM','10:00 AM','11:00 AM','12:00 PM','1:00 PM','2:00 PM','3:00 PM','4:00 PM','5:00 PM'];
+
+  (function buildDates(){
+    const d = new Date();
+    let added = 0;
+    while (added < 5) {
+      d.setDate(d.getDate() + 1);
+      const dow = d.getDay();
+      if (dow === 0 || dow === 6) continue;
+      const chip = document.createElement('button');
+      chip.type = 'button';
+      chip.className = 'date-chip';
+      chip.dataset.date = d.toLocaleDateString(undefined,{weekday:'long',month:'short',day:'numeric'});
+      chip.innerHTML = `<span class="dow">${d.toLocaleDateString(undefined,{weekday:'short'})}</span><span class="day">${d.getDate()}</span>`;
+      chip.addEventListener('click', () => {
+        document.querySelectorAll('.date-chip').forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        selectedDate = chip.dataset.date;
+        updateSummary();
+      });
+      datesEl.appendChild(chip);
+      added++;
+    }
+  })();
+
+  TIMES.forEach(t => {
+    const chip = document.createElement('button');
+    chip.type = 'button';
+    chip.className = 'time-chip';
+    chip.textContent = t;
+    chip.addEventListener('click', () => {
+      document.querySelectorAll('.time-chip').forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      selectedTime = t;
+      updateSummary();
+    });
+    timesEl.appendChild(chip);
+  });
+
+  function updateSummary(){
+    if (selectedDate && selectedTime) {
+      summaryEl.innerHTML = `<strong>${selectedDate}</strong> at <strong>${selectedTime}</strong>`;
+    } else if (selectedDate) {
+      summaryEl.innerHTML = `Date selected: <strong>${selectedDate}</strong> — now pick a time.`;
+    } else {
+      summaryEl.textContent = 'Select a date and time to see your appointment.';
+    }
+  }
+
+  fab.addEventListener('click', () => overlay.classList.add('open'));
+  closeBtn.addEventListener('click', () => overlay.classList.remove('open'));
+  overlay.addEventListener('click', e => { if (e.target === overlay) overlay.classList.remove('open'); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') overlay.classList.remove('open'); });
+
+  document.getElementById('bookForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const msg = document.getElementById('bookMsg');
+    const name = document.getElementById('bookName').value.trim();
+    const phone = document.getElementById('bookPhone').value.trim();
+    if (!name || !phone) {
+      msg.style.display='block'; msg.style.color='#e0a08a';
+      msg.textContent='Please enter your name and phone number.'; return;
+    }
+    if (!selectedDate || !selectedTime) {
+      msg.style.display='block'; msg.style.color='#e0a08a';
+      msg.textContent='Please pick a date and time.'; return;
+    }
+    const body = encodeURIComponent(
+      `Appointment Request\nName: ${name}\nPhone: ${phone}\nDate: ${selectedDate}\nTime: ${selectedTime}`
+    );
+    msg.style.display='block'; msg.style.color='var(--gold-lt)';
+    msg.innerHTML = `Thanks, ${name}! Your request for <strong>${selectedDate} at ${selectedTime}</strong> is noted. ` +
+      `<a href="mailto:?subject=Appointment Request — ${selectedDate} ${selectedTime}&body=${body}">Send by email</a>`;
+    document.querySelectorAll('.date-chip,.time-chip').forEach(c=>c.classList.remove('active'));
+    selectedDate = selectedTime = null;
+    this.reset();
+    updateSummary();
+  });
+</script>
+
+</body>
+</html>
