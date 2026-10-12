@@ -54,10 +54,12 @@
   .brand { display:flex; align-items:center; gap:14px; }
   .brand-mark {
     width:42px; height:42px; border-radius:50%;
-    border:2px solid var(--gold); color:var(--gold);
+    display:grid; place-items:center;
     background:rgba(222,169,77,.08);
-    display:grid; place-items:center; font-family:'Bodoni Moda',serif;
-    font-size:1.05rem; font-weight:700;
+  }
+  .brand-mark img {
+    width:100%; height:auto; border-radius:50%;
+    display:block;
   }
   .brand-text { display:flex; flex-direction:column; }
   .brand-name { font-family:'Bodoni Moda',serif; font-size:1.15rem; letter-spacing:.04em; color:var(--text-light); line-height:1.25; }
@@ -470,7 +472,7 @@
 <header>
   <div class="wrap nav">
     <a href="index.html" class="brand">
-      <span class="brand-mark">SC</span>
+      <span class="brand-mark"><img src="assets/logo.png" alt="Sparkling Cleaning Services logo"></span>
       <span class="brand-text">
         <span class="brand-name">Sparkling</span>
         <span class="brand-sub">Cleaning Services</span>
@@ -698,7 +700,7 @@
 <footer>
   <div class="wrap">
     <a href="index.html" class="brand">
-      <span class="brand-mark">SC</span>
+      <span class="brand-mark"><img src="assets/logo.png" alt="Sparkling Cleaning Services logo"></span>
       <span class="brand-text">
         <span class="brand-name">Sparkling</span>
         <span class="brand-sub">Cleaning Services</span>
