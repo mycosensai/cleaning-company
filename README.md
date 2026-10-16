@@ -2,6 +2,8 @@
 
 A single-page static website for Sparkling Cleaning Services — residential house cleaning.
 
+**Live:** https://mycosensai.github.io/cleaning-company/ (page2: [/page2.html](https://mycosensai.github.io/cleaning-company/page2.html))
+
 ## Fidelity
 
 **Lo-fi structure** — single HTML file, no build step, no dependencies beyond Google Fonts CDN.
