@@ -869,13 +869,32 @@
       `Bedrooms: ${form.bedrooms.value}\nService: ${form.service.value}\n` +
       `Notes: ${form.notes.value || '—'}`
     );
-    // Email the quote request straight to the business inbox
-    window.location.href = `mailto:sparkle.clean2828@gmail.com?subject=Cleaning Quote Request — ${encodeURIComponent(form.name.value)}&body=${body}`;
+    // Submit the quote request to the business inbox via FormSubmit
     msg.style.display = 'block';
     msg.style.color = 'var(--gold-lt)';
-    msg.innerHTML = 'Opening your email app to send your request — or call/text us at ' +
-      '<a href="tel:2146123837" style="color:var(--gold-bright);">214-612-3837</a>.';
-    form.reset();
+    msg.textContent = 'Sending your request...';
+    fetch('https://formsubmit.co/ajax/' + 'sparkle' + '.clean2828' + '@gmail.com', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+      body: JSON.stringify({
+        _subject: 'Cleaning Quote Request — ' + form.name.value,
+        Name: form.name.value, Phone: form.phone.value,
+        Bedrooms: form.bedrooms.value, Service: form.service.value,
+        Notes: form.notes.value || '—'
+      })
+    }).then(r => r.json()).then(data => {
+      if (data && data.success !== false) {
+        msg.innerHTML = '✅ Request sent! We\'ll get back to you shortly — or call/text ' +
+          '<a href="tel:2146123837" style="color:var(--gold-bright);">214-612-3837</a>.';
+        form.reset();
+      } else { throw new Error('failed'); }
+    }).catch(() => {
+      // fallback: open mail app
+      window.location.href = 'mailto:sparkle.clean2828@gmail.com?subject=Cleaning Quote Request&body=' + body;
+      msg.innerHTML = 'Opening your email app — or call/text ' +
+        '<a href="tel:2146123837" style="color:var(--gold-bright);">214-612-3837</a>.';
+      form.reset();
+    });
   });
 
   /* ── Booking widget ── */
@@ -959,11 +978,27 @@
     const body = encodeURIComponent(
       `Appointment Request\nName: ${name}\nPhone: ${phone}\nDate: ${selectedDate}\nTime: ${selectedTime}`
     );
-    // Email the appointment request straight to the business inbox
-    window.location.href = `mailto:sparkle.clean2828@gmail.com?subject=${encodeURIComponent('Appointment Request — ' + selectedDate + ' ' + selectedTime)}&body=${body}`;
+    // Submit the appointment request via FormSubmit
     msg.style.display='block'; msg.style.color='var(--gold-lt)';
-    msg.innerHTML = `Thanks, ${name}! Opening your email app for <strong>${selectedDate} at ${selectedTime}</strong> — ` +
-      `or call/text <a href="tel:2146123837" style="color:var(--gold-bright);">214-612-3837</a>.`;
+    msg.textContent = 'Sending your request...';
+    const bookPayload = {
+      _subject: 'Appointment Request — ' + selectedDate + ' ' + selectedTime,
+      Name: name, Phone: phone, Date: selectedDate, Time: selectedTime
+    };
+    fetch('https://formsubmit.co/ajax/' + 'sparkle' + '.clean2828' + '@gmail.com', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+      body: JSON.stringify(bookPayload)
+    }).then(r => r.json()).then(data => {
+      if (data && data.success !== false) {
+        msg.innerHTML = `✅ Thanks, ${name}! Your <strong>${selectedDate} at ${selectedTime}</strong> request is sent — ` +
+          `or call/text <a href="tel:2146123837" style="color:var(--gold-bright);">214-612-3837</a>.`;
+      } else { throw new Error('failed'); }
+    }).catch(() => {
+      window.location.href = 'mailto:sparkle.clean2828@gmail.com?subject=Appointment Request&body=' + body;
+      msg.innerHTML = 'Opening your email app — or call/text ' +
+        '<a href="tel:2146123837" style="color:var(--gold-bright);">214-612-3837</a>.';
+    });
     document.querySelectorAll('.date-chip,.time-chip').forEach(c=>c.classList.remove('active'));
     selectedDate = selectedTime = null;
     this.reset();
