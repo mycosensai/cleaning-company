@@ -979,11 +979,15 @@
       `Appointment Request\nName: ${name}\nPhone: ${phone}\nDate: ${selectedDate}\nTime: ${selectedTime}`
     );
     // Submit the appointment request via FormSubmit
+    // NOTE: capture date/time NOW — they're reset to null below while the
+    // request is still in flight, and the success message reads them later.
+    const bookedDate = selectedDate;
+    const bookedTime = selectedTime;
     msg.style.display='block'; msg.style.color='var(--gold-lt)';
     msg.textContent = 'Sending your request...';
     const bookPayload = {
-      _subject: 'Appointment Request — ' + selectedDate + ' ' + selectedTime,
-      Name: name, Phone: phone, Date: selectedDate, Time: selectedTime
+      _subject: 'Appointment Request — ' + bookedDate + ' ' + bookedTime,
+      Name: name, Phone: phone, Date: bookedDate, Time: bookedTime
     };
     fetch('https://formsubmit.co/ajax/' + 'sparkle' + '.clean2828' + '@gmail.com', {
       method: 'POST',
@@ -991,7 +995,7 @@
       body: JSON.stringify(bookPayload)
     }).then(r => r.json()).then(data => {
       if (data && data.success !== false) {
-        msg.innerHTML = `✅ Thanks, ${name}! Your <strong>${selectedDate} at ${selectedTime}</strong> request is sent — ` +
+        msg.innerHTML = `✅ Thanks, ${name}! Your <strong>${bookedDate} at ${bookedTime}</strong> request is sent — ` +
           `or call/text <a href="tel:2146123837" style="color:var(--gold-bright);">214-612-3837</a>.`;
       } else { throw new Error('failed'); }
     }).catch(() => {
