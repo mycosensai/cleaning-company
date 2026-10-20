@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mycosensai.github.io/cleaning-company/sitemap.xml
